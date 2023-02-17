@@ -3,7 +3,8 @@
 #include<time.h>
 
 /**
- * main - Print the last digit of a random produced number and also indicate the operators i.e greater than, lesser than or zero
+ * main - Print the last digit of a random produced number
+ * and also indicate the operators i.e greater than, lesser than or zero
  *
  * Return: Always 0 (Success)
  */
