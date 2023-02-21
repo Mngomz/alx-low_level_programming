@@ -6,7 +6,7 @@
  * @c1: the first number
  *
  * @c2: the second number
- * 
+ *
  * Return: Interger value
  */
 
