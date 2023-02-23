@@ -5,7 +5,7 @@
  *
  * @n: counts the number of times the character is printed
  *
- * Return: a diagonal line
+ * Return: empty
  */
 
 void print_diagonal(int n)
@@ -20,7 +20,7 @@ void print_diagonal(int n)
 	{
 	for (g = 0; g < n; g++)
 	{
-	for (h = 0; h < n; h++)
+	for (h = 0; h < g; h++)
 	{
 	_putchar(32);
 	}
