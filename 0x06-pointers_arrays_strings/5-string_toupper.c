@@ -3,7 +3,7 @@
 /**
  * string_toupper - changes all lowercase letters to uppercase
  *
- * @s: the string to be changed
+ * @str: the string to be changed
  *
  * Return: the pointer to dest
  */
