@@ -25,9 +25,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	s2 = "";
 
 	for (o = 0; s1[o] != '\0'; o++)
+	;
 
 	for (p = 0; s2[p] != '\0'; p++)
-
+	;
+	
 	if (n > p)
 	n = p;
 
