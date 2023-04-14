@@ -42,7 +42,7 @@ void close_file(int fd)
 {
 	int s;
 
-	s = pclose(fd);
+	s = close(fd);
 
 	if (s == -1)
 	{
@@ -78,9 +78,9 @@ int main(int argc, char *argv[])
 	}
 
 	buffer = create_buffer(argv[2]);
-	from = popen(argv[1], O_RDONLY);
-	r = fread(from, buffer, 1024);
-	to = popen(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	from = open(argv[1], O_RDONLY);
+	r = read(from, buffer, 1024);
+	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	do {
 	if (from == -1 || r == -1)
@@ -91,7 +91,7 @@ int main(int argc, char *argv[])
 	exit(98);
 	}
 
-	w = fwrite(to, buffer, r);
+	w = write(to, buffer, r);
 	if (to == -1 || w == -1)
 	{
 	dprintf(STDERR_FILENO,
@@ -100,8 +100,8 @@ int main(int argc, char *argv[])
 	exit(99);
 	}
 
-	r = fread(from, buffer, 1024);
-	to = popen(argv[2], O_WRONLY | O_APPEND);
+	r = read(from, buffer, 1024);
+	to = open(argv[2], O_WRONLY | O_APPEND);
 
 	} while (r > 0);
 
